@@ -1,14 +1,21 @@
-import flask
+from flask import Flask, render_template
 import subprocess
+from flask import request
 
-app = flask.Flask(__name__)
+app = Flask(__name__)
 
+#@app.route("/")
+#def hello():
+#    return render_template("index.html")
 @app.route("/")
-def hello():
-#    cmd = ['ipconfig']
-#    sub = subprocess.check_output(cmd, shell=True)
-    user = {'username' : 'TEST'}
-    return flask.render_template("index.html")
+def test():
+    return '<form action="/echo" method="POST"><input name="text"><input type="submit" value="Echo"></form>'
+
+@app.route("/echo", methods=["POST"])
+def test_post():
+    return request.form['text']
+#    ar = request.args.get('txt')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
