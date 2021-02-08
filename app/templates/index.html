@@ -3,17 +3,16 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Sber</title>
+	<title>Test</title>
 	<div id="head">
 		<h3> devops_vault </h3>
 	</div>
 </head>
 <body>
 	<div id="encrypter">
-		<form action="/index" method="POST">
-			<input type="text", name="txt">
-			<input type="submit", value="send">
-			<pre>{{ text }}</pre>
+		<form action="/echo" method="POST">
+			<input name="text">
+			<input type="submit" value="Echo">
 		</form>
 	</div>
 </body>
