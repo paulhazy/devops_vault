@@ -1,5 +1,4 @@
 from flask import Flask, render_template
-import subprocess
 from flask import request
 
 app = Flask(__name__)
@@ -10,8 +9,8 @@ def test():
 
 @app.route("/echo", methods=["POST"])
 def test_post():
-    return request.form['text']
-#    ar = request.args.get('txt')
+    txt = request.form.get('text')
+    return f'<h1>{txt}</h1>'
 
 if __name__ == '__main__':
     app.run(debug=True)
